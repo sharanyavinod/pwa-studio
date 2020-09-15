@@ -7,8 +7,12 @@ import Footer from '../Footer';
 import Header from '../Header';
 import defaultClasses from './main.css';
 
+import Page from '../TestApp';
+import { NavigationAEM } from '../NavigationAEM';
+import aemClasses from './aem.css';
+
 const Main = props => {
-    const { children, isMasked } = props;
+    const { children, isMasked, aemModel } = props;
     const classes = mergeClasses(defaultClasses, props.classes);
 
     const rootClass = isMasked ? classes.root_masked : classes.root;
@@ -19,6 +23,15 @@ const Main = props => {
     return (
         <main className={rootClass}>
             <Header />
+            {
+              aemModel && (
+              <div>
+                <h3 className={aemClasses.title}> We Retail Blog Page</h3>
+                <Page
+                  pagePath='/content/we-retail-journal/react/en/blog' />
+              </div>
+              )
+            }
             <div className={pageClass}>{children}</div>
             <Footer />
         </main>

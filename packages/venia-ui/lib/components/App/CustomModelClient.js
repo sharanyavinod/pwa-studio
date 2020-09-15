@@ -13,7 +13,7 @@
  ~ See the License for the specific language governing permissions and
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-import { ModelClient } from '@adobe/cq-spa-page-model-manager';
+import { ModelClient } from '@adobe/aem-spa-page-model-manager';
 
 const FETCH_CONFIG = {
     headers: {

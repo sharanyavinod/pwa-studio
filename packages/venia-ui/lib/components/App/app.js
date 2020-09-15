@@ -13,12 +13,8 @@ import Routes from '../Routes';
 import ToastContainer from '../ToastContainer';
 import Icon from '../Icon';
 
-import TestApp from '../TestApp';
-import NavigationAEM from '../NavigationAEM';
-import aemClasses from './aem.css';
-
 import { CustomModelClient } from './CustomModelClient';
-import { ModelManager, Constants } from "@adobe/cq-spa-page-model-manager";
+import { ModelManager } from "@adobe/aem-spa-page-model-manager";
 
 import {
     AlertCircle as AlertCircleIcon,
@@ -86,15 +82,12 @@ const App = props => {
 
     /* Fetch AEM model */
     const [aemModel, setAemModel] = useState();
-    document.addEventListener('initializeModel', ({ detail }) => {
-      const { apiHost, path } = detail || {};
-        const modelClient = new CustomModelClient(apiHost);
-        ModelManager.initialize({
-          modelClient: modelClient,
-          path
-        }).then((model) => {
-            setAemModel(model);
-        });
+    const modelClient = new CustomModelClient('http://localhost:4502');
+    ModelManager.initialize({
+      modelClient,
+      path: '/content/we-retail-journal/react/en'
+    }).then((model) => {
+        setAemModel(model);
     });
 
 
@@ -112,18 +105,8 @@ const App = props => {
     return (
         <HeadProvider>
             <Title>{`Home Page - ${STORE_NAME}`}</Title>
-            <Main isMasked={hasOverlay}>
+            <Main isMasked={hasOverlay} aemModel={aemModel}>
                 <Routes />
-                {
-                  aemModel && (
-                  <div>
-                    <h3 className={aemClasses.title}> AEM Component 1 - Page</h3>
-                    <TestApp cqChildren={aemModel[Constants.CHILDREN_PROP]} cqItems={aemModel[Constants.ITEMS_PROP]} cqItemsOrder={aemModel[Constants.ITEMS_ORDER_PROP]} cqPath={aemModel[Constants.PATH_PROP]} />
-                    <h3 className={aemClasses.title}> AEM Component 2 - Navigation</h3>
-                    <NavigationAEM aemModel={aemModel} cqPath='/content/we-retail-journal/react/en/blog/jcr:content/root/navigation' />
-                  </div>
-                  )
-                }
             </Main>
             <Mask isActive={hasOverlay} dismiss={handleCloseDrawer} />
             <Navigation />

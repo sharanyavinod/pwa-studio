@@ -2,6 +2,28 @@
 # yarn lockfile v1
 
 
+"@adobe/aem-react-editable-components@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@adobe/aem-react-editable-components/-/aem-react-editable-components-1.0.4.tgz#ed08af6a265d6389a4be6d9ba7478cb07e278c96"
+  integrity sha512-a24hxB1EfNqUmMri6zrcp6surg8NTuXle/1gmYIrxZrjmt4ftR9OE/xwaPjOjx/++pASaKkSBYKwXyAPGAjDOg==
+  dependencies:
+    prop-types "^15.7.2"
+    react-fast-compare "^2.0.4"
+
+"@adobe/aem-spa-component-mapping@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@adobe/aem-spa-component-mapping/-/aem-spa-component-mapping-1.0.5.tgz#ad5f9149bed1181f16bcb3b7b9dfae588c34a96d"
+  integrity sha512-e5AUJkHTsLgarOe6TrklfG8ocYDgBcQtKeEUksjQyHl/yO983XkXITjcTvj0+6S3v7gnuQuWllmqA7+lgvSsJQ==
+  optionalDependencies:
+    babel-polyfill "^6.26.0"
+
+"@adobe/aem-spa-page-model-manager@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@adobe/aem-spa-page-model-manager/-/aem-spa-page-model-manager-1.0.3.tgz#bb6f51898c0b86b77c69fcb212b9309176a0785f"
+  integrity sha512-IfOeJNDJYsLziTZixqD4juuKlSBi86ENXuxcYdoztEQmaFuHDdRFMbxw29IXpPw8pvqXCUXR6T4KrOMU0pA/Zg==
+  dependencies:
+    clone "^2.1.2"
+
 "@adobe/apollo-link-mutation-queue@~1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@adobe/apollo-link-mutation-queue/-/apollo-link-mutation-queue-1.0.0.tgz#736f10ce03054999fe2a38d393db869d50eda4bf"
@@ -4476,6 +4498,15 @@ babel-plugin-transform-undefined-to-void@^6.9.4:
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-undefined-to-void/-/babel-plugin-transform-undefined-to-void-6.9.4.tgz#be241ca81404030678b748717322b89d0c8fe280"
   integrity sha1-viQcqBQEAwZ4t0hxcyK4nQyP4oA=
 
+babel-polyfill@^6.26.0:
+  version "6.26.0"
+  resolved "https://registry.yarnpkg.com/babel-polyfill/-/babel-polyfill-6.26.0.tgz#379937abc67d7895970adc621f284cd966cf2153"
+  integrity sha1-N5k3q8Z9eJWXCtxiHyhM2WbPIVM=
+  dependencies:
+    babel-runtime "^6.26.0"
+    core-js "^2.5.0"
+    regenerator-runtime "^0.10.5"
+
 babel-preset-current-node-syntax@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/babel-preset-current-node-syntax/-/babel-preset-current-node-syntax-0.1.2.tgz#fb4a4c51fe38ca60fede1dc74ab35eb843cb41d6"
@@ -5520,6 +5551,11 @@ clone@^1.0.2:
   resolved "https://registry.yarnpkg.com/clone/-/clone-1.0.4.tgz#da309cc263df15994c688ca902179ca3c7cd7c7e"
   integrity sha1-2jCcwmPfFZlMaIypAheco8fNfH4=
 
+clone@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/clone/-/clone-2.1.2.tgz#1b7f4b9f591f1e8f83670401600345a02887435f"
+  integrity sha1-G39Ln1kfHo+DZwQBYANFoCiHQ18=
+
 co@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/co/-/co-4.6.0.tgz#6ea6bdf3d853ae54ccb8e47bfa0bf3f9031fb184"
@@ -5876,7 +5912,7 @@ core-js@^1.0.0:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
   integrity sha1-ZSKUwUZR2yj6k70tX/KYOk8IxjY=
 
-core-js@^2.4.0, core-js@^2.5.3, core-js@^2.5.7, core-js@^2.6.5:
+core-js@^2.4.0, core-js@^2.5.0, core-js@^2.5.3, core-js@^2.5.7, core-js@^2.6.5:
   version "2.6.11"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.11.tgz#38831469f9922bded8ee21c9dc46985e0399308c"
   integrity sha512-5wjnpaT/3dV+XB4borEsnAYQchn00XSgTAWKDkEqv+K8KevjbzmofK6hfJ9TZIlpj2N0xQpazy7PiRQiWHqzWg==
@@ -14145,6 +14181,11 @@ regenerate@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/regenerate/-/regenerate-1.4.0.tgz#4a856ec4b56e4077c557589cae85e7a4c8869a11"
   integrity sha512-1G6jJVDWrt0rK99kBjvEtziZNCICAuvIPkSiUFIQxVP06RCVpq3dmDo2oi6ABpYaDYaTRr67BEhL8r1wgEZZKg==
+
+regenerator-runtime@^0.10.5:
+  version "0.10.5"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.10.5.tgz#336c3efc1220adcedda2c9fab67b5a7955a33658"
+  integrity sha1-M2w+/BIgrc7dosn6tntaeVWjNlg=
 
 regenerator-runtime@^0.11.0:
   version "0.11.1"

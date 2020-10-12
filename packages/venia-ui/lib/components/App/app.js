@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback } from 'react';
 import { array, func, shape, string } from 'prop-types';
 
 import { useToasts } from '@magento/peregrine';
@@ -12,9 +12,6 @@ import Navigation from '../Navigation';
 import Routes from '../Routes';
 import ToastContainer from '../ToastContainer';
 import Icon from '../Icon';
-
-import { CustomModelClient } from './CustomModelClient';
-import { ModelManager } from "@adobe/aem-spa-page-model-manager";
 
 import {
     AlertCircle as AlertCircleIcon,
@@ -80,17 +77,6 @@ const App = props => {
 
     const { hasOverlay, handleCloseDrawer } = talonProps;
 
-    /* Fetch AEM model */
-    const [aemModel, setAemModel] = useState();
-    const modelClient = new CustomModelClient('http://localhost:4502');
-    ModelManager.initialize({
-      modelClient,
-      path: '/content/we-retail-journal/react/en'
-    }).then((model) => {
-        setAemModel(model);
-    });
-
-
     if (renderError) {
         return (
             <HeadProvider>
@@ -105,7 +91,7 @@ const App = props => {
     return (
         <HeadProvider>
             <Title>{`Home Page - ${STORE_NAME}`}</Title>
-            <Main isMasked={hasOverlay} aemModel={aemModel}>
+            <Main isMasked={hasOverlay}>
                 <Routes />
             </Main>
             <Mask isActive={hasOverlay} dismiss={handleCloseDrawer} />

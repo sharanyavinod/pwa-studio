@@ -8,11 +8,11 @@ import Header from '../Header';
 import defaultClasses from './main.css';
 
 import Page from '../TestApp';
-import { NavigationAEM } from '../NavigationAEM';
+import { AEMText } from '../TextAEM';
 import aemClasses from './aem.css';
 
 const Main = props => {
-    const { children, isMasked, aemModel } = props;
+    const { children, isMasked } = props;
     const classes = mergeClasses(defaultClasses, props.classes);
 
     const rootClass = isMasked ? classes.root_masked : classes.root;
@@ -23,15 +23,14 @@ const Main = props => {
     return (
         <main className={rootClass}>
             <Header />
-            {
-              aemModel && (
-              <div>
+            <div>
                 <h3 className={aemClasses.title}> We Retail Blog Page</h3>
                 <Page
                   pagePath='/content/we-retail-journal/react/en/blog' />
-              </div>
-              )
-            }
+                <AEMText
+                  pagePath='/content/we-retail-journal/react/en/blog/aboutus'
+                  itemPath='root/responsivegrid/paragraph_2' />
+            </div>
             <div className={pageClass}>{children}</div>
             <Footer />
         </main>

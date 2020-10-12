@@ -13,6 +13,9 @@ import store from './store';
 import app from '@magento/peregrine/lib/store/actions/app';
 import App, { AppContextProvider } from '@magento/venia-ui/lib/components/App';
 
+import { CustomModelClient } from './CustomModelClient';
+import { ModelManager } from "@adobe/aem-spa-page-model-manager";
+
 import { registerSW } from './registerSW';
 
 const { BrowserPersistence } = Util;
@@ -68,6 +71,10 @@ const apolloLink = ApolloLink.from([
     // An apollo-link-http Link
     Adapter.apolloLink(apiBase)
 ]);
+
+/* Initialize Model Manager */
+const modelClient = new CustomModelClient('http://localhost:4502');
+ModelManager.initializeAsync({ modelClient });
 
 ReactDOM.render(
     <Adapter apiBase={apiBase} apollo={{ link: apolloLink }} store={store}>
